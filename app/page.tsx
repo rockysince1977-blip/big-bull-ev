@@ -1,69 +1,118 @@
 import Image from "next/image";
+import { Navbar } from "@/components/navbar";
 
-export default function Home() {
+import InfiniteCarousel from "@/components/carousel";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { CanvasText } from "@/components/ui/canvas-text";
+import { Scooter } from "@/components/scoooter";
+import { Network } from "@/components/network";
+import { Journal } from "@/components/journal";
+import { Footer } from "@/components/footer";
+export default function BigBullWhiteLandingPage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div>
+      
+      {/* <div className='flex border-4 justify-around gap-1.5 flex-wrap items-center align-middle h-100 flex-row-reverse'>
+        <div className='1 h-25 w-25 border-2 bg-amber-400'>1</div>
+        <div className='2 h-25 w-25 border-2 bg-amber-400'>2</div>
+        <div className='3 h-25 w-25 border-2 bg-amber-400'>3</div>
+        <div className='4 h-25 w-25 border-2 bg-amber-400'>4</div>
+        <div className='5 h-25 w-25 border-2 bg-amber-400'>5</div>
+      </div> */}
+      <InfiniteCarousel />
+      <MaxWidthWrapper className={`p-8`}>
+        <section
+          id="about"
+          className=" px-3 py-3 sm:px-4 bg-gray-100 rounded-xl"
+        >
+          <div className="overflow-hidden rounded-sm bg-surface lg:grid lg:grid-cols-2">
+            <div className="px-6 py-10 sm:px-10 lg:py-16">
+              <h2 className="text-[2rem] leading-tight font-semibold tracking-tight sm:text-[2.5rem]">
+                State Approved{" "}
+                {/* <span className="text-tesla-blue"></span> */}
+                <CanvasText
+                  backgroundClassName='bg-blue-600'
+                  text="Electric Rickshaw"
+                  colors={[
+                    "#ff6b6b",
+                    "#4ecdc4",
+                    "#45b7d1",
+                    "#96ceb4",
+                  ]}
+                />
+              </h2>
+              <p className="mt-3 max-w-xl text-[0.95rem] text-muted-foreground">
+                Big Bull Traders Pvt Ltd manufactures ICAT-approved battery
+                rickshaws, electric scooters and loaders — engineered for
+                reliability, low maintenance and zero emission city duty.
+              </p>
+
+              <dl className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 sm:max-w-md">
+                <div>
+                  <dd className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                    iCAT
+                  </dd>
+                  <dt className="mt-1 text-sm text-muted-foreground">
+                    Certified Vehicles
+                  </dt>
+                </div>
+                <div>
+                  <dd className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                    10+
+                  </dd>
+                  <dt className="mt-1 text-sm text-muted-foreground">
+                    States Covered
+                  </dt>
+                </div>
+                <div>
+                  <dd className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                    2
+                  </dd>
+                  <dt className="mt-1 text-sm text-muted-foreground">
+                    Manufacturing Plants
+                  </dt>
+                </div>
+                <div>
+                  <dd className="text-3xl font-semibold tracking-tight sm:text-4xl">
+                    24 hrs
+                  </dd>
+                  <dt className="mt-1 text-sm text-muted-foreground">
+                    Feedback Response
+                  </dt>
+                </div>
+              </dl>
+
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <Link
+                  href="#dealership"
+                  className="tsl-btn tsl-btn-dark sm:w-auto"
+                >
+                  <Button>Become A Dealer</Button>
+                </Link>
+                <Link href="#network" className="tsl-btn sm:w-auto">
+                  <Button>Learn More</Button>
+                </Link>
+              </div>
+            </div>
+
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/images/mock-factory.jpg"
+              alt="factory image"
+              className="h-64 w-full object-cover rounded-xl sm:h-96 lg:h-full"
+              width={1600}
+              height={1008}
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+          </div>
+        </section>
+
+        <Scooter/>
+        <Network/>
+        <Journal/>
+        
+      </MaxWidthWrapper>
+      
     </div>
   );
 }
