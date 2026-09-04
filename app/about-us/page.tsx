@@ -44,28 +44,29 @@ const reasons = [
 
 function Hero() {
   return (
-    <section className="mt-20 lg:mt-40  mx-auto grid max-w-7xl gap-5 px-4 pb-16 pt-6 sm:gap-6 sm:pt-10 md:grid-cols-[0.9fr_1.1fr] md:px-8 md:pb-24">
+    <section className="mt-20 lg:mt-40 mx-auto grid max-w-7xl gap-5 px-4 pb-16 pt-6 sm:gap-6 sm:pt-10 md:grid-cols-[0.9fr_1.1fr] md:px-8 md:pb-24">
       <div className="flex flex-col justify-between rounded-[1.75rem] bg-zinc-950 p-6 text-white sm:p-8 md:rounded-[2rem] md:p-12">
         <div>
           <p className="mb-8 font-mono text-xs uppercase tracking-[0.25em] text-blue-400">
             Our Company Walkthrough
           </p>
           <h1 className="max-w-xl text-balance text-4xl font-semibold tracking-[-0.06em] sm:text-5xl md:text-7xl">
-          <CanvasText
+            Moving 
+            <br/>
+            <CanvasText
               backgroundClassName="bg-blue-600"
-              text="Moving India"
+              text=" India"
               colors={["#ff6b6b", "#4ecdc4", "#45b7d1", "#96ceb4"]}
             />
             <br/>
-             toward a 
-             <br/>
-             <CanvasText
+            toward a 
+            <br/>
+            <CanvasText
               backgroundClassName="bg-green-500"
-              text="greener tomorrow"
+              text="greener"
               colors={["#ff6b6b", "#4ecdc4", "#45b7d1", "#96ceb4"]}
             />
-            
-
+            tomorrow
           </h1>
         </div>
         <p className="mt-12 max-w-xl text-pretty text-base leading-7 text-zinc-300 sm:mt-16 sm:text-lg sm:leading-8">
@@ -147,13 +148,15 @@ function Values() {
           </article>
         </div>
       </section>
-      <section className="bg-zinc-950 text-white">
+
+      {/* Added overflow-hidden to full-bleed dark container */}
+      <section className="overflow-hidden bg-zinc-950 text-white">
         <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:py-20 md:grid-cols-[0.7fr_1.3fr] md:px-8 md:py-28">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-blue-400">
               Why Big Bull
             </p>
-            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.05em] sm:text-5xl md:text-6xl">
+            <h2 className="mt-5 text-3xl font-semibold tracking-[-0.05em] sm:text-5xl md:text-6xl">
               Built around trust.
             </h2>
           </div>
@@ -161,12 +164,14 @@ function Values() {
             {reasons.map((item, index) => (
               <li
                 key={item}
-                className="flex gap-5 py-5 text-base leading-7 text-zinc-300 sm:py-6 sm:text-lg"
+                className="flex gap-4 py-5 text-base leading-7 text-zinc-300 sm:gap-5 sm:py-6 sm:text-lg"
               >
-                <span className="font-mono text-sm text-blue-400">
+                {/* Prevent number label from shrinking */}
+                <span className="shrink-0 font-mono text-sm text-blue-400">
                   0{index + 1}
                 </span>
-                <span>{item}</span>
+                {/* min-w-0 flex-1 forces text to wrap within container bounds */}
+                <span className="min-w-0 flex-1">{item}</span>
               </li>
             ))}
           </ul>
@@ -329,7 +334,7 @@ function NetworkAndContact() {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white text-zinc-950">
+    <main className="min-h-screen w-full overflow-x-hidden bg-white text-zinc-950">
       <Hero />
       <div className="border-y border-zinc-200 bg-zinc-50">
         <div className="mx-auto grid max-w-7xl gap-6 px-4 py-10 sm:py-12 md:grid-cols-3 md:px-8">

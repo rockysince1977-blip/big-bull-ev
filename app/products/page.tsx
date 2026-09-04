@@ -239,7 +239,7 @@ export default function Page() {
       </section>
       <SafetySection />
 
-      <section className="px-3 py-3 pb-12 sm:px-4 bg-gray-100">
+      <section className="px-3 py-3 pb-12 sm:px-4">
         <div className="overflow-hidden rounded-sm bg-gray-100 px-6 py-12 text-gray-900 sm:px-10">
           <h2 className="text-[1.75rem] leading-tight font-semibold tracking-tight sm:text-[2rem]">
             Genuine Spare Parts & Service

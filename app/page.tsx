@@ -30,11 +30,13 @@ export default function BigBullWhiteLandingPage() {
           <div className="overflow-hidden rounded-sm bg-surface lg:grid lg:grid-cols-2">
             <div className="px-6 py-10 sm:px-10 lg:py-16">
               <h2 className="text-[2rem] leading-tight font-semibold tracking-tight sm:text-[2.5rem]">
-                State Approved{" "}
+                State Approved
+                <br/>
                 {/* <span className="text-tesla-blue"></span> */}
                 <CanvasText
+                className="-mt-5"
                   backgroundClassName='bg-blue-600'
-                  text="Electric Rickshaw"
+                  text="Electric "
                   colors={[
                     "#ff6b6b",
                     "#4ecdc4",
@@ -42,6 +44,7 @@ export default function BigBullWhiteLandingPage() {
                     "#96ceb4",
                   ]}
                 />
+                Rickshaw
               </h2>
               <p className="mt-3 max-w-xl text-[0.95rem] text-muted-foreground">
                 Big Bull Traders Pvt Ltd manufactures ICAT-approved battery
